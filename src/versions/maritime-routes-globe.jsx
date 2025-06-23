@@ -88,7 +88,7 @@ const MaritimeGlobe = () => {
     const loadData = async () => {
       try {
         const [portsResponse] = await Promise.all([
-          fetch('src/utils/geojson/PUB151_distances.json'),
+          fetch('/geojson/PUB151_distances.json'),
         ]);
 
         const portsData = await portsResponse.json();

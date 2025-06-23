@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Globe from 'react-globe.gl';
 import * as THREE from 'three';
 import getStarfield from '../utils/getStarfield.js';
-import pointTexture from '../assets/globe/point-32.png'; // Reference point image
-import beamTexture from '../assets/globe/lightray-180.png'; // Light beam image
+import pointTexture from '/assets/globe/point-32.png'; // Reference point image
+import beamTexture from '/assets/globe/lightray-180.png'; // Light beam image
 
 
 const InteractiveGlobe = () => {
@@ -39,7 +39,7 @@ const InteractiveGlobe = () => {
 
     // Fetch GeoJSON borders
     useEffect(() => {
-        fetch('src/utils/geojson/ne_110m_land.json')
+        fetch('/geojson/ne_110m_land.json')
             .then(res => res.json())
             .then(data => setCountries(data))
             .catch(err => console.error('Error loading GeoJSON:', err));
@@ -55,7 +55,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#ff5733',
             details: 'Largest city in the USA',
-            image_url: 'src/assets/cities/newyork.jpg'
+            image_url: '/assets/cities/newyork.jpg'
         },
         {
             lat: 51.5074,
@@ -65,7 +65,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#33ff57',
             details: 'Capital of England',
-            image_url: 'src/assets/cities/london.jpg'
+            image_url: '/assets/cities/london.jpg'
         },
         {
             lat: 35.6762,
@@ -75,7 +75,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#3357ff',
             details: 'Largest metropolitan area',
-            image_url: 'src/assets/cities/tokyo.jpg'
+            image_url: '/assets/cities/tokyo.jpg'
         },
         {
             lat: 12.971599,
@@ -85,7 +85,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#d5c82a',
             details: 'Silicon Valley of India',
-            image_url: 'src/assets/cities/bengaluru.jpg'
+            image_url: '/assets/cities/bengaluru.jpg'
         },
         {
             lat: 48.8575,
@@ -95,7 +95,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#ffffff',
             details: 'City of Love',
-            image_url: 'src/assets/cities/paris.jpg'
+            image_url: '/assets/cities/paris.jpg'
         },
         {
             lat: 17.4065,
@@ -105,7 +105,7 @@ const InteractiveGlobe = () => {
             size: 1.5,
             color: '#E1341E',
             details: 'Capital of Telangana',
-            image_url: 'src/assets/cities/hyderabad.jpeg'
+            image_url: '/assets/cities/hyderabad.jpeg'
         },        
     ];
 
@@ -348,7 +348,7 @@ const InteractiveGlobe = () => {
                 
                
                 globeImageUrl={false}
-                backgroundImageUrl={'src/assets/globe/bg.jpg'}
+                backgroundImageUrl={'/assets/globe/bg.jpg'}
                 showGlobe={true}
                 showGraticules={true}
                 globeMaterial={new THREE.MeshBasicMaterial({
